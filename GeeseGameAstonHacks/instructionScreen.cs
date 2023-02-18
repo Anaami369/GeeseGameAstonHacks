@@ -10,11 +10,22 @@ using System.Windows.Forms;
 
 namespace GeeseGameAstonHacks
 {
-    public partial class instructionScreen : UserControl
+    public partial class InstructionScreen : UserControl
     {
-        public instructionScreen()
+        public InstructionScreen()
         {
             InitializeComponent();
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            Form f = this.FindForm();
+            f.Controls.Remove(this);
+
+            HomePage ls = new HomePage();
+            f.Controls.Add(ls);
+
+            ls.Focus();
         }
     }
 }

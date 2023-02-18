@@ -1,7 +1,7 @@
 ﻿
 namespace GeeseGameAstonHacks
 {
-    partial class InstructionScreen
+    partial class GameOverScreen
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,29 +29,30 @@ namespace GeeseGameAstonHacks
         /// </summary>
         private void InitializeComponent()
         {
-            this.backButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // backButton
+            // label1
             // 
-            this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backButton.Location = new System.Drawing.Point(0, 0);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(90, 39);
-            this.backButton.TabIndex = 0;
-            this.backButton.Text = "Back";
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.label1.BackColor = System.Drawing.Color.YellowGreen;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1695, 71);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Game Over";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // InstructionScreen
+            // GameOverScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GeeseGameAstonHacks.Properties.Resources.static_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.backButton);
+            this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
-            this.Name = "InstructionScreen";
+            this.Name = "GameOverScreen";
             this.Size = new System.Drawing.Size(1695, 845);
             this.ResumeLayout(false);
 
@@ -59,6 +60,6 @@ namespace GeeseGameAstonHacks
 
         #endregion
 
-        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Label label1;
     }
 }

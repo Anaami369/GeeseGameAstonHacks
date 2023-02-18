@@ -58,6 +58,7 @@ namespace GeeseGameAstonHacks
             this.howToPlayButton.TabIndex = 1;
             this.howToPlayButton.Text = "How to Play?";
             this.howToPlayButton.UseVisualStyleBackColor = false;
+            this.howToPlayButton.Click += new System.EventHandler(this.howToPlayButton_Click);
             // 
             // quitButton
             // 
@@ -70,6 +71,7 @@ namespace GeeseGameAstonHacks
             this.quitButton.TabIndex = 2;
             this.quitButton.Text = "Quit";
             this.quitButton.UseVisualStyleBackColor = false;
+            this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
             // 
             // playButton
             // 
@@ -82,6 +84,7 @@ namespace GeeseGameAstonHacks
             this.playButton.TabIndex = 3;
             this.playButton.Text = "Play";
             this.playButton.UseVisualStyleBackColor = false;
+            this.playButton.Click += new System.EventHandler(this.playButton_Click);
             // 
             // HomePage
             // 

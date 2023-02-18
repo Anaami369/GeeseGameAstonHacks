@@ -16,5 +16,32 @@ namespace GeeseGameAstonHacks
         {
             InitializeComponent();
         }
+
+        private void quitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void howToPlayButton_Click(object sender, EventArgs e)
+        {
+            Form f = this.FindForm();
+            f.Controls.Remove(this);
+
+            InstructionScreen ls = new InstructionScreen();
+            f.Controls.Add(ls);
+
+            ls.Focus();
+        }
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            Form f = this.FindForm();
+            f.Controls.Remove(this);
+
+            GameScreen ls = new GameScreen();
+            f.Controls.Add(ls);
+
+            ls.Focus();
+        }
     }
 }
