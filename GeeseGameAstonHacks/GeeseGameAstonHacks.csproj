@@ -52,19 +52,37 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="gameScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gameScreen.Designer.cs">
+      <DependentUpon>gameScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="instructionScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="instructionScreen.Designer.cs">
+      <DependentUpon>instructionScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gameScreen.resx">
+      <DependentUpon>gameScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="instructionScreen.resx">
+      <DependentUpon>instructionScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,6 +109,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\geese background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\instructionsBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\static background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

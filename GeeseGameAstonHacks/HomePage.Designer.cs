@@ -31,9 +31,9 @@ namespace GeeseGameAstonHacks
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.howToPlayButton = new System.Windows.Forms.Button();
+            this.quitButton = new System.Windows.Forms.Button();
+            this.playButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
@@ -47,41 +47,41 @@ namespace GeeseGameAstonHacks
             this.label1.TabIndex = 0;
             this.label1.Text = "Goose on the Loose";
             // 
-            // button1
+            // howToPlayButton
             // 
-            this.button1.BackColor = System.Drawing.Color.Maroon;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(185, 103);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 67);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "How to Play?";
-            this.button1.UseVisualStyleBackColor = false;
+            this.howToPlayButton.BackColor = System.Drawing.Color.Maroon;
+            this.howToPlayButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.howToPlayButton.ForeColor = System.Drawing.Color.White;
+            this.howToPlayButton.Location = new System.Drawing.Point(185, 103);
+            this.howToPlayButton.Name = "howToPlayButton";
+            this.howToPlayButton.Size = new System.Drawing.Size(141, 67);
+            this.howToPlayButton.TabIndex = 1;
+            this.howToPlayButton.Text = "How to Play?";
+            this.howToPlayButton.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // quitButton
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(362, 103);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 67);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Quit";
-            this.button2.UseVisualStyleBackColor = false;
+            this.quitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.quitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quitButton.ForeColor = System.Drawing.Color.White;
+            this.quitButton.Location = new System.Drawing.Point(362, 103);
+            this.quitButton.Name = "quitButton";
+            this.quitButton.Size = new System.Drawing.Size(141, 67);
+            this.quitButton.TabIndex = 2;
+            this.quitButton.Text = "Quit";
+            this.quitButton.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // playButton
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(13, 103);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(141, 67);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Play";
-            this.button3.UseVisualStyleBackColor = false;
+            this.playButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.playButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playButton.ForeColor = System.Drawing.Color.White;
+            this.playButton.Location = new System.Drawing.Point(13, 103);
+            this.playButton.Name = "playButton";
+            this.playButton.Size = new System.Drawing.Size(141, 67);
+            this.playButton.TabIndex = 3;
+            this.playButton.Text = "Play";
+            this.playButton.UseVisualStyleBackColor = false;
             // 
             // HomePage
             // 
@@ -89,9 +89,9 @@ namespace GeeseGameAstonHacks
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GeeseGameAstonHacks.Properties.Resources.geese_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.playButton);
+            this.Controls.Add(this.quitButton);
+            this.Controls.Add(this.howToPlayButton);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "HomePage";
@@ -103,9 +103,9 @@ namespace GeeseGameAstonHacks
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button howToPlayButton;
+        private System.Windows.Forms.Button quitButton;
+        private System.Windows.Forms.Button playButton;
         private System.Windows.Forms.Timer timer1;
     }
 }
