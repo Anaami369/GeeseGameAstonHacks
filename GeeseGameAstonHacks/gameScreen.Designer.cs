@@ -44,7 +44,7 @@ namespace GeeseGameAstonHacks
             // 
             // gameTimer
             // 
-            this.gameTimer.Interval = 15;
+            this.gameTimer.Interval = 5;
             this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
             // 
             // resumeButton
