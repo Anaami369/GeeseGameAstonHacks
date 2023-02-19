@@ -126,7 +126,6 @@ namespace GeeseGameAstonHacks
 
         public void makeGeese()
         {
-            honk.Play();
             Honk newGeese = new Honk(0, 0, geeseHeight, geeseWidth, geeseSpeed);
             geese.Add(newGeese);
         }
@@ -169,7 +168,11 @@ namespace GeeseGameAstonHacks
                     break;
                 case Keys.Space:
                     spaceDown = true;
-                    honk.Play();
+
+                    if(0 < human.x && human.x < 500)
+                    {
+                        honk.Play();
+                    }
                     break;
 
                 default:
