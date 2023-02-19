@@ -103,6 +103,8 @@ namespace GeeseGameAstonHacks
                 ifEgg = true;
                 moveEgg = true;
                 makeEgg();
+
+                stumpSpeed = stumpSpeed + 1;
             }
 
         }
@@ -373,7 +375,6 @@ namespace GeeseGameAstonHacks
             #region move geese and poop
             if (ifGeese == true)
             {
-                honk.Play();
                 foreach (Honk b in geese.ToList())
                 {
                     b.GeeseMove(playerSpeed);
