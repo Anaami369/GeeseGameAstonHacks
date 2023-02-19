@@ -49,9 +49,9 @@ namespace GeeseGameAstonHacks
             // 
             // howToPlayButton
             // 
-            this.howToPlayButton.BackColor = System.Drawing.Color.Maroon;
+            this.howToPlayButton.BackColor = System.Drawing.Color.White;
             this.howToPlayButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.howToPlayButton.ForeColor = System.Drawing.Color.White;
+            this.howToPlayButton.ForeColor = System.Drawing.Color.Black;
             this.howToPlayButton.Location = new System.Drawing.Point(185, 103);
             this.howToPlayButton.Name = "howToPlayButton";
             this.howToPlayButton.Size = new System.Drawing.Size(141, 67);
@@ -62,7 +62,7 @@ namespace GeeseGameAstonHacks
             // 
             // quitButton
             // 
-            this.quitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.quitButton.BackColor = System.Drawing.Color.Black;
             this.quitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quitButton.ForeColor = System.Drawing.Color.White;
             this.quitButton.Location = new System.Drawing.Point(362, 103);
@@ -75,9 +75,9 @@ namespace GeeseGameAstonHacks
             // 
             // playButton
             // 
-            this.playButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.playButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.playButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playButton.ForeColor = System.Drawing.Color.White;
+            this.playButton.ForeColor = System.Drawing.Color.Black;
             this.playButton.Location = new System.Drawing.Point(13, 103);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(141, 67);

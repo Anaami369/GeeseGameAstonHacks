@@ -120,7 +120,8 @@
   <data name="label1.Text" xml:space="preserve">
     <value>The game has one objective. It is to run away from the geese and collect up to 22 good eggs. 
 
-You will start with an initial score of 5. There will be eggs spawning every 15 seconds. 
+You will start with an initial score of 0. There will be eggs spawning every 15 seconds. 
+Each egg is worth 1 score.
 Collect as many as you can!!
 
 There will also be geese flying in at times trying to poop on your head. 

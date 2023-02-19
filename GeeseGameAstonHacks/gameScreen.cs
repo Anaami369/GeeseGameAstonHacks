@@ -82,8 +82,11 @@ namespace GeeseGameAstonHacks
 
         private void geeseTimer_Tick(object sender, EventArgs e)
         {
-            time--;
-            eggInterval--;
+            if(!gamePaused)
+            {
+                time--;
+                eggInterval--;
+            }
 
             timeLabel.Text = "Time: " + time;
 
@@ -164,6 +167,7 @@ namespace GeeseGameAstonHacks
                     break;
                 case Keys.Space:
                     spaceDown = true;
+                    honk.Play();
                     break;
 
                 default:
@@ -454,7 +458,16 @@ namespace GeeseGameAstonHacks
         private void menuButton_Click(object sender, EventArgs e)
         {
             gamePaused = false;
-            OnEnd();
+
+            Form f = this.FindForm();
+            f.Controls.Remove(this);
+
+            HomePage gos = new HomePage();
+            f.Controls.Add(gos);
+
+            gos.Location = new Point(0, 0);
+
+            gos.Focus();
         }
 
         public void onStart()

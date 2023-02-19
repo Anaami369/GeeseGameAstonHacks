@@ -122,16 +122,6 @@ namespace GeeseGameAstonHacks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Lose_Screen {
-            get {
-                object obj = ResourceManager.GetObject("Lose_Screen", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap player {
             get {
                 object obj = ResourceManager.GetObject("player", resourceCulture);
@@ -191,9 +181,19 @@ namespace GeeseGameAstonHacks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap you_win {
+        internal static System.Drawing.Bitmap YOU_LOSE {
             get {
-                object obj = ResourceManager.GetObject("you_win", resourceCulture);
+                object obj = ResourceManager.GetObject("YOU_LOSE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap YOU_WIN {
+            get {
+                object obj = ResourceManager.GetObject("YOU_WIN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

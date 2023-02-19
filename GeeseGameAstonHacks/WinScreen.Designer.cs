@@ -38,7 +38,7 @@ namespace GeeseGameAstonHacks
             this.menuButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.menuButton.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuButton.ForeColor = System.Drawing.Color.Black;
-            this.menuButton.Location = new System.Drawing.Point(4, 4);
+            this.menuButton.Location = new System.Drawing.Point(1565, 4);
             this.menuButton.Margin = new System.Windows.Forms.Padding(4);
             this.menuButton.Name = "menuButton";
             this.menuButton.Size = new System.Drawing.Size(126, 48);
@@ -51,7 +51,7 @@ namespace GeeseGameAstonHacks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GeeseGameAstonHacks.Properties.Resources.you_win;
+            this.BackgroundImage = global::GeeseGameAstonHacks.Properties.Resources.YOU_WIN;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.menuButton);
             this.DoubleBuffered = true;
