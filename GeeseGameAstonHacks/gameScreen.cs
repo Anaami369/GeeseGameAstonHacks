@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.Timers;
+using System.Media;
 
 namespace GeeseGameAstonHacks
 {
@@ -21,6 +22,8 @@ namespace GeeseGameAstonHacks
         bool ifGeese = false;
         bool movePoop = false;
         bool ifPoop = false;
+        bool ifEgg = false;
+        bool moveEgg = false;
 
         int gap = 0;
         int playerSpeed = 3;
@@ -39,11 +42,14 @@ namespace GeeseGameAstonHacks
         int poopScreenSpeed = 15;
         int poopSize = 10;
 
+        int eggInterval = 15;
+        int eggHeight = 30;
+        int eggWidth = 50;
+
         int lives = 5;
         int count = 0;
-        int time = 45;
-        int eggStayTimer = 5;
-        int eggInterval = 15;
+        int time = 60;
+        int score = 0;
 
         Human human;
 
@@ -55,7 +61,14 @@ namespace GeeseGameAstonHacks
 
         List<Poop> poop = new List<Poop>();
 
+        List<Egg> badEgg = new List<Egg>();
+
+
+        SoundPlayer honk = new SoundPlayer(Properties.Resources.honk_sound);
+        SoundPlayer pop = new SoundPlayer(Properties.Resources.pop);
+
         System.Timers.Timer myTimer = new System.Timers.Timer();
+
         SolidBrush boxBrush = new SolidBrush(Color.White);
 
         private Random randNum = new Random();
@@ -78,11 +91,27 @@ namespace GeeseGameAstonHacks
             {
                 ifGeese = true;
                 geeseFormalities();
-                time = 45;
                 ifPoop = true;
+                time = 60;
             }
 
-            stumpSpeed++;
+            if (eggInterval == 0)
+            {
+                ifEgg = true;
+                moveEgg = true;
+                makeEgg();
+            }
+
+        }
+
+        public void makeEgg()
+        {
+            if (ifEgg == true)
+            {
+                Egg newEgg = new Egg(1100, 410, eggHeight, eggWidth);
+                badEgg.Add(newEgg);
+                ifEgg = false;
+            }
         }
 
         public void geeseFormalities()
@@ -92,6 +121,7 @@ namespace GeeseGameAstonHacks
 
         public void makeGeese()
         {
+            honk.Play();
             Honk newGeese = new Honk(0, 0, geeseHeight, geeseWidth, geeseSpeed);
             geese.Add(newGeese);
         }
@@ -173,6 +203,21 @@ namespace GeeseGameAstonHacks
                         b.Move("left", poopScreenSpeed);
                     }
                 }
+
+                if (moveEgg == true)
+                {
+
+                    foreach (Egg b in badEgg.ToList())
+                    {
+                        b.Move("left", stumpSpeed);
+
+                        if (b.x < 0)
+                        {
+                            badEgg.Remove(b);
+                            moveEgg = false;
+                        }
+                    }
+                }
             }
 
             if (rightArrowDown)
@@ -199,6 +244,15 @@ namespace GeeseGameAstonHacks
                     foreach (Poop b in poop)
                     {
                         b.Move("right", poopScreenSpeed);
+                    }
+                }
+
+                if (moveEgg == true)
+                {
+
+                    foreach (Egg b in badEgg.ToList())
+                    {
+                        b.Move("right", stumpSpeed);
                     }
                 }
             }
@@ -283,11 +337,39 @@ namespace GeeseGameAstonHacks
                     }
                 }
             }
+
+            if (badEgg.Count > 0)
+            {
+                for (int i = 0; i < badEgg.Count; i++)
+                {
+                    Rectangle poopRec = new Rectangle(badEgg[i].x, badEgg[i].y, badEgg[i].height, badEgg[i].width);
+
+                    if (humanRec.IntersectsWith(poopRec))
+                    {
+                        score++;
+                        scoreLabel.Text = "";
+                        scoreLabel.Text = "Score: " + score;
+
+                        foreach (Egg b in badEgg.ToList())
+                        {
+                            badEgg.Remove(b);
+                            eggInterval = 15;
+                        }
+
+                        if (score == 22)
+                        {
+                            OnWin();
+                        }
+                    }
+                }
+            }
+
             #endregion
 
             #region move geese and poop
             if (ifGeese == true)
             {
+                honk.Play();
                 foreach (Honk b in geese.ToList())
                 {
                     b.GeeseMove(playerSpeed);
@@ -395,6 +477,7 @@ namespace GeeseGameAstonHacks
             human = new Human(100, 556, playerSpeed, playerSize);
 
             livesLabel.Text = "Lives: " + lives;
+            scoreLabel.Text = "Score: " + score;
 
             makeSmallStump();
         }
@@ -428,7 +511,20 @@ namespace GeeseGameAstonHacks
             Form f = this.FindForm();
             f.Controls.Remove(this);
 
-            HomePage gos = new HomePage();
+            LoseScreen gos = new LoseScreen();
+            f.Controls.Add(gos);
+
+            gos.Location = new Point(0, 0);
+
+            gos.Focus();
+        }
+
+        public void OnWin()
+        {
+            Form f = this.FindForm();
+            f.Controls.Remove(this);
+
+            WinScreen gos = new WinScreen();
             f.Controls.Add(gos);
 
             gos.Location = new Point(0, 0);
@@ -449,6 +545,17 @@ namespace GeeseGameAstonHacks
             }
 
             #endregion
+
+            #region draw eggs
+
+            foreach (Egg b in badEgg)
+            {
+                e.Graphics.DrawImage(Properties.Resources.bad_egg, b.x, b.y, eggHeight, eggWidth);
+                pop.Play();
+            }
+
+            #endregion
+
             foreach (Poop b in poop)
             {
                 boxBrush.Color = b.color;

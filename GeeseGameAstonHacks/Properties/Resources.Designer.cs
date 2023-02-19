@@ -73,6 +73,16 @@ namespace GeeseGameAstonHacks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bad_egg {
+            get {
+                object obj = ResourceManager.GetObject("bad_egg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap geese_background {
             get {
                 object obj = ResourceManager.GetObject("geese_background", resourceCulture);
@@ -83,9 +93,38 @@ namespace GeeseGameAstonHacks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap goose_sitting {
+        internal static System.Drawing.Bitmap good_egg {
             get {
-                object obj = ResourceManager.GetObject("goose_sitting", resourceCulture);
+                object obj = ResourceManager.GetObject("good_egg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap goose_on_the_loose_title_wide_white_bg {
+            get {
+                object obj = ResourceManager.GetObject("goose_on_the_loose_title_wide_white_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream honk_sound {
+            get {
+                return ResourceManager.GetStream("honk_sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lose_Screen {
+            get {
+                object obj = ResourceManager.GetObject("Lose_Screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -97,6 +136,15 @@ namespace GeeseGameAstonHacks.Properties {
             get {
                 object obj = ResourceManager.GetObject("player", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream pop {
+            get {
+                return ResourceManager.GetStream("pop", resourceCulture);
             }
         }
         
@@ -136,6 +184,16 @@ namespace GeeseGameAstonHacks.Properties {
         internal static System.Drawing.Bitmap treeStumpTaller {
             get {
                 object obj = ResourceManager.GetObject("treeStumpTaller", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap you_win {
+            get {
+                object obj = ResourceManager.GetObject("you_win", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

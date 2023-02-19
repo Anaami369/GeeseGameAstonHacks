@@ -9,14 +9,14 @@ namespace GeeseGameAstonHacks
 {
     class Egg
     {
-        public Color color;
-        public int x, y, size;
+        public int x, y, height, width;
 
-        public Egg(int _x, int _y, int _size)
+        public Egg(int _x, int _y, int _height, int _width)
         {
             x = _x;
             y = _y;
-            size = _size;
+            height = _height;
+            width = _width;
         }
 
         public void Move(string direction, int speed)

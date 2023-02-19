@@ -39,6 +39,7 @@ namespace GeeseGameAstonHacks
             this.livesLabel = new System.Windows.Forms.Label();
             this.geeseTimer = new System.Windows.Forms.Timer(this.components);
             this.timeLabel = new System.Windows.Forms.Label();
+            this.scoreLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // gameTimer
@@ -134,12 +135,25 @@ namespace GeeseGameAstonHacks
             this.timeLabel.Text = "Time: ";
             this.timeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // scoreLabel
+            // 
+            this.scoreLabel.BackColor = System.Drawing.Color.Transparent;
+            this.scoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreLabel.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.scoreLabel.Location = new System.Drawing.Point(739, 0);
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.Size = new System.Drawing.Size(199, 59);
+            this.scoreLabel.TabIndex = 15;
+            this.scoreLabel.Text = "label2";
+            this.scoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GeeseGameAstonHacks.Properties.Resources.static_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.livesLabel);
             this.Controls.Add(this.label3);
@@ -169,5 +183,6 @@ namespace GeeseGameAstonHacks
         private System.Windows.Forms.Label livesLabel;
         private System.Windows.Forms.Timer geeseTimer;
         private System.Windows.Forms.Label timeLabel;
+        private System.Windows.Forms.Label scoreLabel;
     }
 }

@@ -90,7 +90,7 @@ namespace GeeseGameAstonHacks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GeeseGameAstonHacks.Properties.Resources.geese_background;
+            this.BackgroundImage = global::GeeseGameAstonHacks.Properties.Resources.goose_on_the_loose_title_wide_white_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.playButton);
             this.Controls.Add(this.quitButton);

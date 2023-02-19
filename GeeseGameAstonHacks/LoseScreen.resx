@@ -117,47 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="angry_goose" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\angry_goose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bad_egg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bad egg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="geese_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\geese background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="good_egg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\good egg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="goose_on_the_loose_title_wide_white_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\goose_on_the_loose_title_wide_white_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="honk_sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\honk-sound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Lose_Screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lose Screen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="player" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\g23247.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pop.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="static_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\static background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="treeStumpShort" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\treeStumpShort.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="treeStumpTall" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\treeStumpTall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="treeStumpTaller" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\treeStumpTaller.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="you_win" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\you win.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>
