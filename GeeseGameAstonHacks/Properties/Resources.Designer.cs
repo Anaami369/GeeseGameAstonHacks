@@ -63,6 +63,16 @@ namespace GeeseGameAstonHacks.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap angry_goose {
+            get {
+                object obj = ResourceManager.GetObject("angry_goose", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap geese_background {
             get {
                 object obj = ResourceManager.GetObject("geese_background", resourceCulture);
@@ -116,6 +126,16 @@ namespace GeeseGameAstonHacks.Properties {
         internal static System.Drawing.Bitmap treeStumpTall {
             get {
                 object obj = ResourceManager.GetObject("treeStumpTall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap treeStumpTaller {
+            get {
+                object obj = ResourceManager.GetObject("treeStumpTaller", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

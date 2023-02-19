@@ -35,7 +35,7 @@ namespace GeeseGameAstonHacks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1677, 867);
+            this.ClientSize = new System.Drawing.Size(1777, 898);
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";

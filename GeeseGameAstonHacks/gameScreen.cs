@@ -6,7 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
+using System.Timers;
 
 namespace GeeseGameAstonHacks
 {
@@ -16,24 +18,82 @@ namespace GeeseGameAstonHacks
         Boolean leftArrowDown, rightArrowDown, escKeyDown, spaceDown, gamePaused;
         bool jumpingUp = false;
         bool jumpingDown = false;
+        bool ifGeese = false;
+        bool movePoop = false;
+        bool ifPoop = false;
 
         int gap = 0;
-        int playerSpeed = 5;
+        int playerSpeed = 3;
+        int stumpSpeed = 10;
         int playerSize = 100;
+        int geeseSpeed = 15;
+
+        int shortStumpHeight = 100;
+        int midStumpHeight = 150;
+        int tallStumpHeight = 200;
+        int stumpWidth = 100;
+
+        int geeseHeight = 50;
+        int geeseWidth = 150;
+        int poopSpeed = 10;
+        int poopScreenSpeed = 15;
+        int poopSize = 10;
+
+        int lives = 5;
+        int count = 0;
+        int time = 45;
+        int eggStayTimer = 5;
+        int eggInterval = 15;
 
         Human human;
-        Stumps smallStump;
-        Stumps midStump;
-        Stumps largeStump;
 
-        Image player = Properties.Resources.player;
+        List<Stump> smallStump = new List<Stump>();
+        List<Stump> midStump = new List<Stump>();
+        List<Stump> largeStump = new List<Stump>();
 
+        List<Honk> geese = new List<Honk>();
+
+        List<Poop> poop = new List<Poop>();
+
+        System.Timers.Timer myTimer = new System.Timers.Timer();
+        SolidBrush boxBrush = new SolidBrush(Color.White);
+
+        private Random randNum = new Random();
         #endregion
 
         public GameScreen()
         {
             InitializeComponent();
             onStart();
+        }
+
+        private void geeseTimer_Tick(object sender, EventArgs e)
+        {
+            time--;
+            eggInterval--;
+
+            timeLabel.Text = "Time: " + time;
+
+            if (time == 0)
+            {
+                ifGeese = true;
+                geeseFormalities();
+                time = 45;
+                ifPoop = true;
+            }
+
+            stumpSpeed++;
+        }
+
+        public void geeseFormalities()
+        {
+            makeGeese();
+        }
+
+        public void makeGeese()
+        {
+            Honk newGeese = new Honk(0, 0, geeseHeight, geeseWidth, geeseSpeed);
+            geese.Add(newGeese);
         }
 
         private void GameScreen_KeyUp(object sender, KeyEventArgs e)
@@ -85,14 +145,62 @@ namespace GeeseGameAstonHacks
         {
             pauseScreenEnabled();
 
-            #region move hero
+            #region move hero and stumps
             if (leftArrowDown)
             {
-                human.Move("left");
+
+                if (human.x <= 100)
+                {
+                    foreach (Stump b in smallStump)
+                    {
+                        b.Move("left");
+                    }
+                }
+                else
+                {
+                    human.Move("left");
+
+                    foreach (Stump b in smallStump)
+                    {
+                        b.Move("left");
+                    }
+                }
+
+                if (movePoop == true)
+                {
+                    foreach (Poop b in poop)
+                    {
+                        b.Move("left", poopScreenSpeed);
+                    }
+                }
             }
+
             if (rightArrowDown)
             {
-                human.Move("right");
+                if (human.x >= 500)
+                {
+                    foreach (Stump b in smallStump)
+                    {
+                        b.Move("right");
+                    }
+                }
+                else
+                {
+                    human.Move("right");
+
+                    foreach (Stump b in smallStump)
+                    {
+                        b.Move("right");
+                    }
+                }
+
+                if (movePoop == true)
+                {
+                    foreach (Poop b in poop)
+                    {
+                        b.Move("right", poopScreenSpeed);
+                    }
+                }
             }
             if (spaceDown)
             {
@@ -114,7 +222,7 @@ namespace GeeseGameAstonHacks
             {
                 human.Move("down");
 
-                if (human.y >= 525)
+                if (human.y >= 556)
                 {
                     jumpingUp = false;
                     jumpingDown = false;
@@ -122,13 +230,131 @@ namespace GeeseGameAstonHacks
             }
             #endregion
 
-            Random randNum = new Random();
-            int randGap = randNum.Next(314, 670);
-            int randStump = randNum.Next(1, 3);
+            #region make a new stump
+            int randGap = randNum.Next(500, 800);
+            gap = randGap;
+
+            if (smallStump.Count > 0 && (1550 - smallStump[smallStump.Count - 1].x) > gap)
+            {
+                makeSmallStump();
+            }
+            #endregion
+
+            #region collision check with stump
+            Rectangle humanRec = new Rectangle(human.x, human.y, human.speed, human.playerSize);
+
+            for (int i = 0; i < count; i++)
+            {
+                Rectangle smallStumpRec = new Rectangle(smallStump[i].x, smallStump[i].y, smallStump[i].height, smallStump[i].width);
+
+                if (humanRec.IntersectsWith(smallStumpRec))
+                {
+                    lives--;
+                    livesLabel.Text = "";
+                    livesLabel.Text = "Lives: " + lives;
+
+                    if (lives == 0)
+                    {
+                        OnEnd();
+                    }
+
+                    onStart();
+                }
+            }
+
+            if (poop.Count > 0)
+            {
+                for (int i = 0; i < poop.Count; i++)
+                {
+                    Rectangle poopRec = new Rectangle(poop[i].x, poop[i].y, poop[i].size, poop[i].size);
+
+                    if (humanRec.IntersectsWith(poopRec))
+                    {
+                        lives--;
+                        livesLabel.Text = "";
+                        livesLabel.Text = "Lives: " + lives;
+
+                        if (lives == 0)
+                        {
+                            OnEnd();
+                        }
+
+                        onStart();
+                    }
+                }
+            }
+            #endregion
+
+            #region move geese and poop
+            if (ifGeese == true)
+            {
+                foreach (Honk b in geese.ToList())
+                {
+                    b.GeeseMove(playerSpeed);
+
+                    if (b.x > 1695)
+                    {
+                        geese.Remove(b);
+                        ifGeese = false;
+                    }
+
+                    if (b.x > 850 && b.x < 1695)
+                    {
+                        int poopPlace = randNum.Next(300, 1650);
+
+                        {
+                            if (ifPoop == true)
+                            {
+                                Poop newPoop = new Poop(poopPlace, geeseHeight, poopSize, Color.DarkGreen);
+                                poop.Add(newPoop);
+
+                                movePoop = true;
+
+                                ifPoop = false;
+                            }
+                        }
+                    }
+                }
+            }
 
 
+            foreach (Poop b in poop.ToList())
+            {
+                b.Move(poopSpeed);
+
+                if (b.y > 845)
+                {
+                    poop.Remove(b);
+                }
+
+                if (b.y > 845)
+                {
+                    movePoop = false;
+                }
+            }
+            #endregion
 
             Refresh();
+        }
+
+        public void makeSmallStump()
+        {
+            Stump smallNew = new Stump(1100 + gap, 590, shortStumpHeight, stumpWidth, stumpSpeed);
+            smallStump.Add(smallNew);
+
+            count++;
+        }
+
+        public void makeMidStump()
+        {
+            Stump MediumNew = new Stump(1100 + gap, 540, midStumpHeight, stumpWidth, stumpSpeed);
+            midStump.Add(MediumNew);
+        }
+
+        public void makeTallStump()
+        {
+            Stump LargeNew = new Stump(1100 + gap, 490, tallStumpHeight, stumpWidth, stumpSpeed);
+            largeStump.Add(LargeNew);
         }
 
         private void resumeButton_Click(object sender, EventArgs e)
@@ -164,8 +390,13 @@ namespace GeeseGameAstonHacks
             spaceDown = false;
 
             gameTimer.Enabled = true;
+            geeseTimer.Enabled = true;
 
-            human = new Human(this.Width / 2 - playerSize / 2, 525, playerSpeed, playerSize);
+            human = new Human(100, 556, playerSpeed, playerSize);
+
+            livesLabel.Text = "Lives: " + lives;
+
+            makeSmallStump();
         }
 
         public void pauseScreenEnabled()
@@ -208,7 +439,41 @@ namespace GeeseGameAstonHacks
         private void GameScreen_Paint(object sender, PaintEventArgs e)
         {
             #region draw hero character
-            e.Graphics.DrawImage(player, human.x, human.y, playerSize, playerSize);
+            e.Graphics.DrawImage(Properties.Resources.player, human.x, human.y, playerSize, playerSize);
+            #endregion
+
+            #region draw geese
+            foreach (Honk b in geese)
+            {
+                e.Graphics.DrawImage(Properties.Resources.angry_goose, b.x, b.y, geeseHeight, geeseWidth);
+            }
+
+            #endregion
+            foreach (Poop b in poop)
+            {
+                boxBrush.Color = b.color;
+                e.Graphics.FillRectangle(boxBrush, b.x, b.y, b.size, b.size);
+            }
+            #region draw poop
+
+            #endregion
+
+            #region draw stumps
+            foreach (Stump b in smallStump)
+            {
+                e.Graphics.DrawImage(Properties.Resources.treeStumpShort, b.x, b.y, stumpWidth, shortStumpHeight);
+            }
+
+            foreach (Stump b in midStump)
+            {
+                e.Graphics.DrawImage(Properties.Resources.treeStumpTall, b.x, b.y, stumpWidth, midStumpHeight);
+            }
+
+            foreach (Stump b in largeStump)
+            {
+                e.Graphics.DrawImage(Properties.Resources.treeStumpTaller, b.x, b.y, stumpWidth, tallStumpHeight);
+            }
+
             #endregion
         }
     }

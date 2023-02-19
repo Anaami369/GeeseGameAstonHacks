@@ -35,6 +35,10 @@ namespace GeeseGameAstonHacks
             this.menuButton = new System.Windows.Forms.Button();
             this.pauseLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.livesLabel = new System.Windows.Forms.Label();
+            this.geeseTimer = new System.Windows.Forms.Timer(this.components);
+            this.timeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // gameTimer
@@ -87,11 +91,48 @@ namespace GeeseGameAstonHacks
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(550, 196);
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(0, 820);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(670, 23);
+            this.label1.Size = new System.Drawing.Size(1695, 25);
             this.label1.TabIndex = 9;
-            this.label1.Text = "label1";
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.GreenYellow;
+            this.label3.Location = new System.Drawing.Point(3, 810);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1692, 10);
+            this.label3.TabIndex = 11;
+            // 
+            // livesLabel
+            // 
+            this.livesLabel.BackColor = System.Drawing.Color.Transparent;
+            this.livesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.livesLabel.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.livesLabel.Location = new System.Drawing.Point(3, 0);
+            this.livesLabel.Name = "livesLabel";
+            this.livesLabel.Size = new System.Drawing.Size(199, 59);
+            this.livesLabel.TabIndex = 12;
+            this.livesLabel.Text = "label2";
+            this.livesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // geeseTimer
+            // 
+            this.geeseTimer.Interval = 1000;
+            this.geeseTimer.Tick += new System.EventHandler(this.geeseTimer_Tick);
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLabel.Location = new System.Drawing.Point(1574, 0);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(67, 25);
+            this.timeLabel.TabIndex = 13;
+            this.timeLabel.Text = "Time: ";
+            this.timeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // GameScreen
             // 
@@ -99,6 +140,9 @@ namespace GeeseGameAstonHacks
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GeeseGameAstonHacks.Properties.Resources.static_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.timeLabel);
+            this.Controls.Add(this.livesLabel);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.resumeButton);
             this.Controls.Add(this.menuButton);
@@ -110,6 +154,7 @@ namespace GeeseGameAstonHacks
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GameScreen_KeyUp);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.GameScreen_PreviewKeyDown);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -120,5 +165,9 @@ namespace GeeseGameAstonHacks
         private System.Windows.Forms.Button menuButton;
         private System.Windows.Forms.Label pauseLabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label livesLabel;
+        private System.Windows.Forms.Timer geeseTimer;
+        private System.Windows.Forms.Label timeLabel;
     }
 }
